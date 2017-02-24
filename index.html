@@ -1,0 +1,156 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Foresight</title>
+<link href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="styles/custom.css" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+ function myMap() {
+  var inLat = document.getElementById('curLat').value;
+  var inLong = document.getElementById('curLong').value;
+  var mapProp= {
+    <!-- center:new  google.maps.LatLng(inLat,inLong),  -->
+    center:new  google.maps.LatLng(51.508742,-0.120850),
+    zoom:5,
+};
+ var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+ }
+</script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgM328Oer8_1Vj12rZx66OlmPY9pA3fCs&callback=myMap"></script>
+/* Google Key = AIzaSyBgM328Oer8_1Vj12rZx66OlmPY9pA3fCs */
+</head> 
+<body> 
+
+<div data-role="page" id="fore_main">
+	<div data-role="header" data-position="fixed"><a href="javascript:;" onClick="window.self.close()"
+data-role="button" data-icon="exit">Exit</a>
+		<h1><img src="images/Foresight_Globe_wide_small_ol.png" width="200" height="95" alt="Foresight Icon"></h1>
+	</div>
+	<div data-role="content">
+        <a href="#fore_search" data-role="button" data-icon="search">Search for Specific Facilities</a>	
+        <a href="#fore_map" data-role="button" data-icon="grid" onclick="myMap()">Map (View Current Location)</a>	
+    <p id="curLat" hidden="true" value="51.508742"></p>
+    <p id="curLong" hidden="true" value="-0.120850"></p>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<h4 class="h4_footer" id="h4_footer_id">Troggleton &copy; 2017 </h4>
+	</div>
+</div>
+
+<div data-role="page" id="fore_search">
+	<div data-role="header" data-position="fixed"><a href="#fore_main" data-role="button" data-icon="back">Back</a>
+		<h1><img src="images/Foresight_Globe_wide_small_ol.png" width="200" height="95" alt="Foresight Icon"></h1>
+	</div>
+	<div data-role="content">
+ 	<h2>Search for What's Ahead</h2>
+      <div data-role="fieldcontain">
+        <label for="textinput">Desired Name&nbsp;:&nbsp;</label>
+        <input type="text" name="searchText" id="searchTextId" value="" class="fore_inputtext" />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="selectType" class="select">Type of Facility:</label>
+        <select name="selectmenu" id="selectmenu">
+          <option value="selt_none">All</option>
+          <option value="selt_Rest">Emercenty Care</option>
+          <option value="selt_Rest">Hospitals</option>
+          <option value="selt_Gas">Gas Stations</option>
+          <option value="selt_RA">Rest Areas</option>
+          <option value="selt_Rest">Restaurants</option>
+        </select>
+      </div>
+      <div data-role="fieldcontain">
+        <label for="selectMilesOR" class="select">Miles off Road&nbsp;:</label>
+        <select name="selectmenu2" id="selectmenu2">
+          <option value="selm_01"> 1 Mile</option>
+          <option value="selm_02"> 2 Miles</option>
+          <option value="selm_03"> 3 Miles</option>
+          <option value="selm_04"> 4 Miles</option>
+          <option value="selm_05"> 5 Miles</option>
+          <option value="selm_06"> 6 Miles</option>
+          <option value="selm_07"> 7 Miles</option>
+          <option value="selm_08"> 8 Miles</option>
+          <option value="selm_09"> 9 Miles</option>
+          <option value="selm_10">10 Miles</option>
+        </select>
+      </div>
+
+      <a href="#fore_sResults" data-role="button" width="50%">Search</a>
+      <p><label class="fore_smalltext">Current Latitude:&nbsp;&nbsp;&nbsp; 80.00009</label></p>
+      <p><label class="fore_smalltext">Current Longitude: -70.00009</label></p>
+    </div>
+	<div data-role="footer" data-position="fixed">
+		<h4 class="h4_footer" id="h4_footer_id">Troggleton &copy; 2017 </h4>
+	</div>
+</div>
+<div data-role="page" id="fore_sResults">
+  <div data-role="header"data-position="fixed"> <a href="#fore_search" data-role="button" data-icon="back">Back</a>
+		<h1><img src="images/Foresight_Globe_WordIn_Smaller.png" width="72" height="72" alt="Globe"></h1>
+  </div>
+  <div data-role="content">
+    <h2>Search Results</h2>
+    <ul data-role="listview">
+      <li><a href="#">
+        <h3>Page</h3>
+        <p>Lorem ipsum</p>
+      </a></li>
+      <li><a href="#">
+        <h3>Page</h3>
+        <p>Lorem ipsum</p>
+      </a></li>
+      <li><a href="#">
+        <h3>Page</h3>
+        <p>Lorem ipsum</p>
+      </a></li>
+      <li><a href="#">
+        <h3>Page</h3>
+        <p>Lorem ipsum</p>
+      </a></li>
+      <li><a href="#">
+        <h3>Page</h3>
+        <p>Lorem ipsum</p>
+      </a></li>
+      <li><a href="#">
+        <h3>Page</h3>
+        <p>Lorem ipsum</p>
+      </a></li>
+      <li><a href="#">
+        <h3>Page</h3>
+        <p>Lorem ipsum</p>
+      </a></li>
+      <li><a href="#">
+        <h3>Page</h3>
+        <p>Lorem ipsum</p>
+      </a></li>
+      <li><a href="#">
+        <h3>Page</h3>
+        <p>Lorem ipsum</p>
+      </a></li>
+      <li><a href="#">
+        <h3>Page</h3>
+        <p>Lorem ipsum</p>
+      </a></li>
+    </ul>
+    
+    </div>
+  <div data-role="footer">
+     <h4 class="h4_footer" id="h4_footer_id">Troggleton &copy; 2017 </h4>
+  </div>
+</div>
+
+<div data-role="page" id="fore_map" >
+	<div data-role="header" data-position="fixed"> <a href="#fore_main" data-role="button" data-icon="back">Back</a>
+		<h1><img src="images/Foresight_Globe_WordIn_Smaller.png" width="72" height="72" alt="Globe"></h1>
+	</div>
+    <!-- commented out<button onclick="myMap()">Click me</button>*/ -->
+	<div data-role="content" id="googleMap" style="width:100%;height:450px;"></div>
+	<div data-role="footer" data-position="fixed">
+		<h4 class="h4_footer" id="h4_footer_id">Troggleton &copy; 2017 </h4>
+	</div>
+</div>
+
+</body>
+</html>
